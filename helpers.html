@@ -47,7 +47,6 @@
   </script>
   
   <div id="presentation">
-    <!-- SLIDE: Download zip from Github -->
     <article class='slide slide-title'>
       <div class="workshop_title">
         <h1>Key Concepts from JS I</h1>
@@ -150,5 +149,407 @@
       </textarea>
       <span class="marker">*</span>
     </article>
+    <article class='slide slide-list'>
+            <h2>Conditional Statements Summary</h2>
+            <div><br><br>
+              <table width="100%" style="font-size: 24px;">
+                  <tr>
+                    <th width="33%" align="left">If Statement </th>
+                    <th width="33%" align="left">If...else statement </th>
+                    <th width="33%" align="left">If...else if...else statement</th>
+                  </tr>
+                  <tr>
+                  <td colspan="3"><br>
+    </td>
+                  </tr>
+                  <tr>
+                    <td>
+    <pre class="prettyprint"  style="font-size: 18px; border: none;">
+    if (condition) {<br>
+     // do something<br>
+    }
+    </pre>
+                    </td>
+                    <td>
+    <pre class="prettyprint"  style="font-size: 18px; border: none;">
+    if (condition) {<br>
+      // do something<br>
+    } else {<br>
+      // otherwise do this<br>
+    }
+    </pre>
+                    </td>
+                    <td>
+    <pre class="prettyprint" style="font-size: 18px; border: none;">
+    if (condition) {<br>
+      // do something<br>
+    } else if (condition2) {<br>
+      // do something else<br>
+    } else {<br>
+      // otherwise do this<br>
+    }
+    </pre>
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <br>
+            <p>&nbsp;</p>
+          </article>
+    
+    <!-- SLIDE:  -->
+      <article class='slide slide-list'>
+        <h2>Testing Conditions</h2>
+        <p>What does a condition actually look like?</p>
+        <p><code> if ( condition ) { ... } </code></p>
+        <textarea class="coder-editor">
+        <script>
+        // Straight Booleans
+        if ( true ) {  
+          document.write( "#1 this works. <br />" );
+        } 
+        if ( false ) {  
+          document.write( "#2 will not work. <br />" );
+        }
+
+        // Booleans via variables
+        var isSunday = true;
+        var isSaturday = false;
+        if ( isSunday == true ) {
+          document.write( "#3 Yeah, laundry day! <br />" );
+        }
+        if ( isSaturday == true ) {
+          document.write( "#4 Nope, you can't go back in time! <br />" );
+        }
+
+        // Numbers
+        if ( 1 &lt; 2 ) {
+          document.write( "#5 works. <br />" );
+        }
+        if ( 2 &lt; 1 ) {
+          document.write( "#6 won't work. <br />" );
+        }
+
+        // Strings
+        var emptyString = "";
+        var filledString = "Woot! Conditionals!";
+        if ( emptyString == "" ) {
+          document.write( "#7 Yep, the string was empty. <br />" );
+        }
+        if ( filledString == "" ) {
+          document.write( "#8 won't work. <br />" );
+        }
+        if ( filledString == "Woot! Conditionals!" ) {
+          document.write( "#9 Code strong. <br />" );
+        }
+        </script>
+        </textarea>
+      </article>        
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h3>
+        Cheat Sheet:  Comparison and Logical Operators
+      </h3>
+    <p class="reminders">
+      Here's a <strong>cheat sheet</strong> of different operators that can be used in conditional statements. </p>
+      <p class="sidenote">Using these two variables, <code>var two = 2</code> and <code>var ten = 10</code>  , the examples below show how the statements would return true using the various operators.
+      </p>
+      <table class="comparison-table" style="float:left; margin-right:20px;">
+        <tr>
+          <th colspan="3" align="left">Comparison operators</th>
+        </tr>
+        <tr>
+          <td width="15%">==</td>
+          <td width="50%">is equal to</td>
+          <td width="35%">ten == two * 5</td>
+        </tr>
+        <tr>
+          <td width="15%">===</td>
+          <td width="50%">
+            is exactly equal to
+            <br />
+            (value and type)
+          </td>
+          <td width="35%">
+            ten === 10
+            <br />
+            ten === "10" (false)
+          </td>
+        </tr>
+        <tr>
+          <td width="15%">!=</td>
+          <td width="50%">is not equal to</td>
+          <td width="35%">ten !== two</td>
+        </tr>
+        <tr>
+          <td width="15%">&gt;</td>
+          <td width="50%">greater than</td>
+          <td width="35%">ten &gt; two</td>
+        </tr>
+        <tr>
+          <td width="15%">&lt;</td>
+          <td width="50%">less than</td>
+          <td width="35%">
+            two
+                &lt; ten
+          </td>
+        </tr>
+        <tr>
+          <td width="15%">&gt;=</td>
+          <td width="50%">greater than or equal to</td>
+          <td width="35%">
+            ten &gt;= two * 5
+            <br />
+            ten &gt;= two * 5 + 1
+          </td>
+        </tr>
+        <tr>
+          <td width="15%">&lt;=</td>
+          <td width="50%">less than for equal to</td>
+          <td width="35%">
+            two
+                        &lt;= ten
+            <br />
+            two
+                        &lt;= 2
+          </td>
+        </tr>
+      </table>
+      <table class="comparison-table" style="float:left;">
+        <tr>
+          <th colspan="3" align="left">Logical operators</th>
+        </tr>
+        <tr>
+          <td width="15%">&amp;&amp;</td>
+          <td width="20%">and</td>
+          <td width="65%">
+            (ten
+            &lt; 11 &amp;&amp; ten &gt; 9)
+          </td>
+        </tr>
+        <tr>
+          <td width="15%">||</td>
+          <td width="20%">or</td>
+          <td width="65%">(ten == 10 || two == 2)</td>
+        </tr>
+        <tr>
+          <td width="15%">!</td>
+          <td width="20%">not</td>
+          <td width="65%">!(ten == two)</td>
+        </tr>
+      </table>
+        <br  clear="all" />
+    </article>
+    <!-- SLIDE: FUNCTIONS -->
+    <article class='slide slide-list'>
+      <h2>Functions in JavaScript</h2>
+      <br />
+      <p><span class="keyword">Functions</span> are pieces of code that are reusable. You declare a function like a variable, but instead of holding a single value, a function holds a series of instructions. When you 'call' or 'invoke' a function, the instructions are executed. Sometimes they are also called <span class="keyword">methods</span> when found on an object - more on that in a bit!</p>
+      <p>
+        <code>prompt()</code>
+        and
+        <code>alert()</code>
+        are two functions that are pre-written into JavaScript.
+      </p>
+      <p>
+        Someone already did the hard work for us by writing these functions to show us popups in the browser.
+      </p>
+      <p>But we can also write our own!</p>
+    </article>
+
+    <!-- SLIDE: DEFINING FUNCTIONS -->
+    <article class='slide slide-list'>
+      <h2>Defining a Function</h2>
+      <p>
+        Create your own functions to group together your own repetitive tasks.
+      </p>
+      <p>
+        To create a function, it needs to be <strong class="keyword">defined</strong>
+        first.
+      </p>
+      <p>
+        There are different ways to define a function, but the most common way is using the
+        <code>function</code>
+        keyword and enclosing one or more lines of code within curly braces <code>{ }</code>.
+      </p>
+      <pre class='prettyprint'>
+      function nameOfFunction() {
+        var name = "Angelina";
+      }
+      </pre>
+
+      <span class="marker">*</span>
+    </article>
+
+    <!-- SLIDE: CALLING FUNCTIONS -->
+    <article class='slide slide-list'>
+      <h2>Calling a Function</h2>
+      <p>
+        The code within functions doesn't execute until it's <strong class="keyword">called</strong>!
+      </p>
+      <p>Let's try that again.</p>
+      <textarea class='coder-editor'>
+      <script>
+        //defining the function
+        function sayMyName() {
+          alert("Angelina");
+        }
+        
+        //Calling the function
+        sayMyName();
+      </script>
+      </textarea>
+    </article>
+    <!-- SLIDE: FUNCTIONS SUMMARY -->
+    <article class='slide slide-list'>
+      <h2>Review: What do we know about Functions so far?</h2>
+      <br />
+      <p><strong>&rsaquo;</strong> Created &amp; defined by using the <code>function</code> keyword</p>
+      <p><strong>&rsaquo;</strong> Used to group together related lines of code and store them under descriptive names</p>
+      <p><strong>&rsaquo;</strong> Can be reused just by calling the function name</p>
+      <p><strong>&rsaquo;</strong> <strong>Define</strong> the function first but it will not run until you <strong>call</strong> the function</p>
+      <p><strong>&rsaquo;</strong> Can be used inside another function</p>
+    </article>
+
+    <!-- SLIDE: Functions & Parameters Review -->
+    <article class='slide slide-list'>
+      <h2>Review: Functions and Parameters</h2>
+      <p>Functions are more flexible when used with parameters because variables can be passed into the function.</p>
+      <p>In the <code>makePizza()</code> function, the variables from inside the function were removed and added as parameters. Now when we call the function we can pass the values right into the function.</p>
+      <img src="assets/function-parameters.jpg" alt="function-parameters" width="800" height="469" />
+    </article>
+    <!-- SLIDE: Objects -->
+    <article class='slide slide-list'>
+      <h2>Objects</h2>
+      <p>If variables are boxes, OBJECTS can be thought of as bento boxes -- &quot;advanced variables&quot; if you will.</p>
+      <p class="centered"><img src="assets/bento_box_real.jpg" height="400" alt="A Real Bento Box" /></p>
+    </article>
+
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h3>How Bento Boxes are like Objects</h3>
+      <br><br><br><br>
+      <table width="100%">
+      <tr>
+      <td class="centered">
+        <img src="assets/Rice.png" width="193" height="119" alt="Rice box diagram" />
+        <br><br><br>
+        </td>
+      <td>
+        <p>A basic variable only holds one value.</p>
+        <pre class="prettyprint">var takeout = "Fried Rice";</pre>
+      </td>
+      </tr>
+      <tr>
+      <td width="430" align="center" valign="middle">
+        <img src="assets/BentoBox.png" width="339" height="207" alt="Bento Box diagram" />
+      </td>
+      <td>
+        <p>An object holds a collection of values.</p>
+        <pre class="prettyprint">// create a new object
+var bentobox = {};
+
+// fill it with stuff
+bentobox.main = "Teriyaki";
+bentobox.side = "Tempura";
+bentobox.salad = "Seaweed Salad";
+bentobox.soup = "Miso";
+bentobox.sauce = "Soya";
+bentobox.dessert = "Fruit";</pre>
+      </td>
+      </td>
+      </tr>
+      </table>
+    </article>
+    <!-- SLIDE: CREATING AN OBJECT -->
+    <article class='slide slide-list'>
+      <h2>Creating an Object</h2>
+      <p>Creating an object is easy. Just like any other variable, use the <strong><code>var</code></strong> keyword and give it a descriptive name. </p>
+      <p>But instead of assigning a single value right away, use these curly braces to make an empty object.</p>
+      <p class="centered highlight"><code>var bentobox = <span class="assignment">{}</span>;</code></p>
+      <p class="centered sidenote">Yes, it's weird but think about the {} as a sort of funky container.</p>
+    </article>
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2>Object Properties</h2>
+      <p>The &quot;compartments&quot; of objects are called <span class="keyword">PROPERTIES</span>.</p>
+      <p>If you already have an existing object, there are a few ways to access and set a value to a property. Since these two are  very commonly used, they will both be discussed.</p>
+
+      <table width="100%" style="font-size: 24px;">
+      <tr>
+        <td width="42%">
+        <strong>Dot notation:</strong><br>
+        <code>myObject.property = value;</code>
+        <br><br>
+        <pre class="prettyprint">
+        bentobox.main = "Teriyaki";
+        bentobox.side = "Tempura";
+        </pre>
+        </td>
+        <td width="8%"></td>
+                <td width="50%"> 
+                <strong>Key-Value Lookup:</strong><br>
+         <code>myObject[key] = value;</code>
+        <br>
+        <br>
+        <pre class="prettyprint">
+        bentobox["main"] = "Teriyaki";
+        bentobox["side"] = "Tempura";
+        </pre>
+
+        </td>
+      </tr>
+      </table>
+      <br><br><br>
+      <p class="sidenote"><strong>Advanced sidenote: </strong><br>
+Alternatively, you can both declare an object and set it's values at the <strong>same</strong> time: <br>
+      <code>var bentobox = { soup:"Miso", main:"Teriyaki" };</code></p>
+    </article>
+    <!-- SLIDE:  -->
+    <article class='slide slide-list'>
+      <h2>Why use Objects?</h2>
+      <p><em>Advanced topic:</em> Objects are useful because you group all these properties together and you can <strong>reuse</strong> the object over again.</p>
+      <p>There's an <strong>expectation</strong> of what you'll get in a bento box. <br>
+      <br>
+      Some items are <strong>fixed</strong> (a fruit dessert, a miso soup) but some compartments can be <strong>edited</strong> (a gyoza side versus tempura). </p>
+            <table width="100%">
+            <tr>
+              <td class="centered"><img src="assets/BentoBox.png" width="339" height="207" alt="Bento box variation #1" /></td>
+              <td class="centered"><img src="assets/BentoBox2.png" width="339" height="207" alt="Bento box variation #2" /></td>
+            </tr>
+            </table>
+      </article>
+  </div>
+    <!-- END div id=presentation -->
+
+    <script src='src/jquery.min.js'></script>
+    <script src="src/modernizr.js"></script>
+
+    <!-- Update these paths to point to the correct files. -->
+    <script src="src/jquery.tmpl.min.js"></script>
+    <script src="src/deck.js/core/deck.core.js"></script>
+
+    <!-- Code Mirror -->
+    <script src="src/codemirror/lib/codemirror.js"></script>
+    <script src="src/codemirror/mode/xml/xml.js"></script>
+    <script src="src/codemirror/mode/css/css.js"></script>
+    <script src="src/codemirror/mode/javascript/javascript.js"></script>
+    <script src="src/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+    <!-- Prettify -->
+    <script src="src/prettify.js"></script>
+
+    <!-- Deck Core and extensions -->
+    <script src="src/deck.js/extensions/status/deck.status.js"></script>
+    <script src="src/deck.js/extensions/navigation/deck.navigation.js"></script>
+    <script src='src/deck.coder.js'></script>
+    <script src="src/deck.js/extensions/hash/deck.hash.js"></script>
+    <script src="src/deck.js/extensions/menu/deck.menu.js"></script>
+    <script>
+    $(function() {
+      $.deck('.slide');
+    });
+  </script>
 </body>
 </html>
