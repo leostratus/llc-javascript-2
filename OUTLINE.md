@@ -115,6 +115,93 @@ Closures and Callbacks
 "Callbacks are just like children: they make you happiest when you give them names and plenty of room" - @maxogden, author of 'Javascript for Cats'
 
 
+Function Declarations vs. Function Expressions
+===
+
+We're going to learn about a bit more nuance when it comes to how you write and use functions.
+
+Recall that you can do this:
+
+
+function doSomething(){
+    // code to do something
+};
+
+doSomething();
+
+or this
+
+var doSomething = function() {
+    // code to do something
+};
+
+doSomething();
+
+Both of these will execute the code inside the curly braces. So how are they different?
+
+The first example uses a function declaration. A function declaration defines a named function without requiring variable assignment.
+
+Just like variable declarations start with 'var', function declarations must start with 'function'.
+
+In this example, the function name is in available in the scope of it's function body, the stuff in the curly braces, and also in the parent scope of whatever contains it - whether that be a function you wrote, or the global scope. This is good, because how else would we call it?
+
+
+The second example is called a 'function expression'. When a variable isn't declared on it's own using the function keyword, it is called a 'function expression'. This is a fancy way of saying that the function definiton, the stuff that says what the function will do, is a part of defining something else also. Sounds confusing? Let's think about this for a moment. In the first example, we're having the function defined all on it's own. In the second examplem we're seeing a function that is a store in a variable. Slightly different.
+
+You can name the function expression or have it be anonymous. Anonymous functions are functions that do not have names. Javascript developers have different opinions on whether you should name your functions when you do this - I think you should because when you have a problem 
+
+[put an example to show in the debugger here the difference between what debugging an anonymous vs named function expression is like]
+
+var doSomething = function doingStuff(){
+    // do some stuff!
+};
+
+In the case of a function assigned to a variable, the 'doingStuff' function name is not available in the parent scope of the variable it is assigned to.
+
+Why not? It's inside the variable. The only way to call doStuff() is to call doSomething()!
+
+
+Using variables to organize your code
+===
+
+As your Javascript programs get more complicated, this special way of defining functions inside of an object lets you organize your functions. 
+
+Why is this important? Well, let's say you have some products and subscriptions on your website. Maybe you're running a web store and a blog for that store on the same website.
+
+// Create an object to store our functions in, but we create named variables that represent categories of actions related to  
+
+var products = {}; 
+    
+products.create = function(productName, price){
+    // adds a new product to the website, let's pretend all products have unique names
+};
+
+products.destroy = function(productName){
+    // removes a products from the website given the product name
+};
+
+var blog = {};
+
+blog.create = function(blogText) {
+    // adds a new blog post, gives it some kind of identifier like a unique ID/number or date
+};
+
+blog.destroy = function(blogID) {
+    //destroys a blog post when given a valid ID for the blog post
+};
+
+We do this because we can't use the nice name of 'create' or 'destroy' more than once in a given scope. You could, in theory, do this:
+
+function createProduct(productName, price)(){};
+function destroyProduct(productName)(){};
+
+function createBlogPost(blogText){};
+function destroyBlogPost(blogID){};
+
+I argue that putting your functions on objects and grouping them by what things they do and what they operate on is nicer and keeps them compartmentalized.
+
+
+
 Hoisting
 ===
 
@@ -122,4 +209,84 @@ Let's take a look at these examples: [Angus' post examples are great](http://jav
 
 8, 3, 3 and [Type Error: bar is not a function]
 
-Often around the internet, when looking at programming examples, you'll see the words 'foo', 'bar', and 'baz'.
+Often around the internet, when looking at programming examples, you'll see the words 'foo', 'bar', and 'baz'. These words are just nonsense words designed to stand in for any identifier or name. 
+
+function foo(){
+    function bar() {
+        return 3;
+    }
+    return bar();
+    function bar() {
+        return 8;
+    }
+}
+alert(foo());
+
+We've been talking about naming a bit, so let's look at this example here. There is a function foo, with two functions inside of it. They're both named bar. If we step line by line through this code, what number will be alerted?
+
+If you said 3, well, your intuition was good. Except, it turns out that Javascript doesn't do that. Instead we have 8. Why did this happen?
+
+There is some Javascript magic here called 'hoisting'.
+
+You'll notice in Javascript that you can do this:
+
+baz();
+
+function baz(){
+    alert("Whoa, called the function before declaring it..? how does this magic work?");
+}
+
+Well, this works because the Javascript engine does operations to reorganize your Javascript when it encounters it.
+
+It will take all of your function declarations and _move them to the top of the scope they are declared in_.
+
+[I probably don't need to write our my internal monologue for all of this, I think I have this one down.]
+
+//**Simulated processing sequence for Question 1**
+function foo(){
+    //define bar once
+    function bar() {
+        return 3;
+    }
+    //redefine it
+    function bar() {
+        return 8;
+    }
+    //return its invocation
+    return bar(); //8
+}
+alert(foo());
+
+What about function expressions, do they get hoisted too? How does this work if the function is inside a variable?
+
+function foo(){
+    var bar = function() {
+        return 3;
+    };
+    return bar();
+    var bar = function() {
+        return 8;
+    };
+}
+alert(foo());
+
+Walkthrough:
+
+//**Simulated processing sequence for Question 2**
+function foo(){
+    //a declaration for each function expression
+    var bar = undefined;
+    var bar = undefined;
+    //first Function Expression is executed
+    bar = function() {
+        return 3;
+    };
+    // Function created by first Function Expression is invoked
+    return bar();
+    // second Function Expression unreachable
+}
+alert(foo()); //3
+
+
+
+
