@@ -32,7 +32,26 @@ Functions
 - functions are objects with a special property: they can be 'invoked' or 'executed'
 
 
-THe Browser Event Loop
+Functions are the smallest, most modular unit of execution.
+
+Most of the code we write will run as a result of functions. So, you can see they are very important if not the most important thing to master early in Javascript.
+
+In Javascipt I we learned how to set up an event so that when we clicked on something, a function would be execute and it's code would be run. 
+
+What happens if the browser has to deal with more than one event? How does it keep track of them? What if other code is running - other functions are running - and an event happens?
+
+We're going to go through how your browser works with some diagrams so that you get an idea of what is happening. This way, when your code doesn't work, you have a high-level model for understanding what your browser is doing and where things went wrong.
+
+Javascript is single-threaded: all this means is that when Javascript is working in the browser, only one thing can be done at a time. Only one function can be running at a time, even though we can write code to make it _seem_ like things are happening in parallel
+
+Javascript is asynchronous: when we say this, we mean that Javascript can queue code up to be executed later. That means that is you do have many events that trigger, they will have to be run in the order the browser has the events triggered because as we just learned Javascript can only be running one thing at a time.
+
+So: Javascript can only run one thing at a time, and when there is more than one function to run the browser has a way of figuring out what order things should happen in. As a result, functions can get queued up and this means that your code can execute later than you might expect. This has some side effects - both good and bad. 
+
+Now, let's look at some examples and diagrams so that we can understand how this all works. 
+
+
+The Browser Event Loop
 ===
 
 Recall that the browser is a program too, written using code. We know that programs need to be told what to do. So what kind of program would we need to write in order to listen for user input? In order to be ready for user input, your browser is listening for input kind of like this:
@@ -79,6 +98,28 @@ Event Loop: If the stack is clear, and there is something in the callback queue,
 
 Think async: don't block the event loop
 
+Scope
+===
+
+In the first Javascript I course, we learned about the 'global scope' and then 'function scope'.
+
+Recall that 
+
+closures = a room with one side transparent walls. You can see inside & outside but can't be seen from outside - @supersole
 
 
-Browser: 
+Closures and Callbacks
+===
+
+
+"Callbacks are just like children: they make you happiest when you give them names and plenty of room" - @maxogden, author of 'Javascript for Cats'
+
+
+Hoisting
+===
+
+Let's take a look at these examples: [Angus' post examples are great](http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/)
+
+8, 3, 3 and [Type Error: bar is not a function]
+
+Often around the internet, when looking at programming examples, you'll see the words 'foo', 'bar', and 'baz'.
