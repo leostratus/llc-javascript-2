@@ -48,7 +48,23 @@ Javascript is asynchronous: when we say this, we mean that Javascript can queue 
 
 So: Javascript can only run one thing at a time, and when there is more than one function to run the browser has a way of figuring out what order things should happen in. As a result, functions can get queued up and this means that your code can execute later than you might expect. This has some side effects - both good and bad. 
 
-Now, let's look at some examples and diagrams so that we can understand how this all works. 
+Synchronous vs. Asynchronous
+===
+
+Use examples from [Raquel's post!](http://rckbt.me/2014/05/understanding-async/)
+
+Synchronous Programming
+===
+
+You go to the shopping mall. Your first stop is to The Shirt Store. Having found the shirt you like, you go to the cashier, pay for your shirt, and walk out with your shirt. Next, you go to The Pants Store. Again, you pick out a pair of jeans, head to the cashier, pay, and walk out. Finally, you enter The Shoe Store. You grab your pair of shoes, pay for them at the cashier, and walk out. Now that you've got your shirt, pants, and shoes, you can go home and party on.
+
+Asynchronous Programming
+===
+
+You are at home and are shopping online. You go to TheShirtStore.com, pick your shirt, and pay for it. Then you head to ThePantsStore.com, select your pants, and pay. Finally, you direct your browser to TheShoeStore.com and buy a pair of shoes. Over the course of the next week, your purchases show up via delivery. Your shoes come in first, then your shirt, and then your pants. Now that you've got your shirt, pants, and shoes, you can party on! (You don't need to go home, because you're probably home already.)
+
+
+Now, let's look at some examples and diagrams so that we can understand how this all works. Then, we'll talk about how to manage functions when you're not sure when they'll execute.
 
 
 The Browser Event Loop
@@ -97,6 +113,16 @@ Asynchronous Callbacks
 Event Loop: If the stack is clear, and there is something in the callback queue, push the first thing in the queue onto the stack.
 
 Think async: don't block the event loop
+
+
+Going Back to the Clothes Example
+===
+
+Let's go back to the clothes example where we had synchronous and asynchronous close purchases:
+
+[examples]
+
+
 
 Scope
 ===
