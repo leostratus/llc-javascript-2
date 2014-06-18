@@ -2,7 +2,6 @@ LLC Javascript 2
 ===
 
 Functions
-$this
 Closures & Callbacks
 Events
 How the event loop and callstack work together with all of this
@@ -19,8 +18,6 @@ There is another HTML file that you should have open in another tab called 'help
 The first thing we're going to is review what we learned about functions last time, and then do a few exercises to warm up. Then, we're going to learn that there is a lot more to learn about functions.
 
 
-
-
 Functions
 ===
 
@@ -30,6 +27,9 @@ Functions
 - can be returned as values from functions
 - can possess properties that can be dynamically created and assigned
 - functions are objects with a special property: they can be 'invoked' or 'executed'
+
+
+[Exercises Here]
 
 
 Functions are the smallest, most modular unit of execution.
@@ -114,6 +114,7 @@ Event Loop: If the stack is clear, and there is something in the callback queue,
 
 Think async: don't block the event loop
 
+[Have a mini-quiz on how the browser works, multiple choice, here.]
 
 Going Back to the Clothes Example
 ===
@@ -123,22 +124,23 @@ Let's go back to the clothes example where we had synchronous and asynchronous c
 [examples]
 
 
+Closures and Callbacks
+===
+
+
+"Callbacks are just like children: they make you happiest when you give them names and plenty of room" - @maxogden, author of 'Javascript for Cats'
 
 Scope
 ===
 
 In the first Javascript I course, we learned about the 'global scope' and then 'function scope'.
 
-Recall that 
 
 closures = a room with one side transparent walls. You can see inside & outside but can't be seen from outside - @supersole
 
 
-Closures and Callbacks
-===
+[Exercises using callbacks with simple DOM APIs?]
 
-
-"Callbacks are just like children: they make you happiest when you give them names and plenty of room" - @maxogden, author of 'Javascript for Cats'
 
 
 Function Declarations vs. Function Expressions
@@ -312,6 +314,15 @@ function foo(){
     // second Function Expression unreachable
 }
 alert(foo()); //3
+
+
+Resources
+===
+
+Need to review the basics or know somebody who couldn't make it to Javascript I with you?
+
+http://jsforcats.com/
+
 
 
 
