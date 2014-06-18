@@ -49,13 +49,52 @@
     </article>
 
     <article class='slide slide-list'>
-      <h2>Synonyms</h2>
+      <h2>Quick Synonyms</h2>
       <p>Programming, like any field, has it's own jargon. There are some words that you will encounter that mean the same thing</p>
       <p>Call a function: execute, run, invoke</p>
       <p>Function parameter: argument</p>
     </article>
 
+    <!-- SCOPE AND FUNCTIONS -->
+    <article>
+      <h2>Revisiting Scope</h2>
+      <p>Javascript has function level scope</p>
+      <p>This means that function declarations define the boundaries of what variables and functions are available for other code to interact with</p>
+    </article>
 
+    <article>
+      <p>Run some examples to demonstrate things being in and out of scope</p>
+    </article>
+
+    <article>
+      <h2>Did You Know You Can Do This?</h2>
+      <p>[Example of function call happening before definition]</p>
+    </article>
+
+    <article>
+      <h2>
+    </article>
+
+    <article class='slide slide-list'>
+      <h2>JavaScript is asynchronous</h2>
+    </article>
+    <article class='slide slide-list'>
+      <h2>Synchronous Programming</h2>
+      <p>Imagine that you need groceries. You go out of your home to buy some.</p>
+      <p>You go to a butcher, and after finding some good meat you pay at the cash register.</p>
+      <p>Next, you go to the produce shop and pick out some vegetables. Then, you pay at the cash register.</p>
+      <p>Finally, you decide to drop into a specialty cheese shop for some brie on your way home. You pay at the cash register, and then you take all of your purchases home.</p>
+    </article>
+
+    <article class='slide slide-list'>
+      <h2>Asynchronous Programming</h2>
+      <p>Imagine that you need groceries. Unlike our first example, in this one you stay home and shop online.</p>
+      <p>You shop at a grocer that offers fresh produce delivered to your door. You pick some, check out, and then pay.</p>
+      <p>Then, you locate a vendor that sources locally produced meats. You buy some bacon and steak at a good price and then pay at the checkout.</p>
+      <p>You decide to order a special treat from an online candy shop. You pay at the checkout.</p>
+      <p>Unlike the first example, you have to wait for all of your packages to arrive. You don't know when they will arrive, you just know it will be sometime in the future.</p>
+      <p>You don't know what order things will arrive in.</p>
+    </article>
 
 
     <!-- THE BROWSER EVENT LOOP -->
@@ -102,47 +141,13 @@
     </article>
 
     <article class='slide slide-list'>
+      [Browser Event Loop Animations]
     </article>
 
     <article class='slide slide-list'>
+      <p>[Mini-Quiz on Browser Event Loop]</p>
     </article>
 
-    <!-- The Event Loop -->
-    <article class='slide slide-list'>
-      <h2>How Your Browser Works</h2>
-      <p></p>
-    </article>
-
-    <article class='slide slide-list'>
-      <h2>JavaScript is asynchronous</h2>
-    </article>
-    <article class='slide slide-list'>
-      <h2>Synchronous Programming</h2>
-      <p>Imagine that you need groceries. You go out of your home to buy some.</p>
-      <p>You go to a butcher, and after finding some good meat you pay at the cash register.</p>
-      <p>Next, you go to the produce shop and pick out some vegetables. Then, you pay at the cash register.</p>
-      <p>Finally, you decide to drop into a specialty cheese shop for some brie on your way home. You pay at the cash register, and then you take all of your purchases home.</p>
-    </article>
-
-    <article class='slide slide-list'>
-      <h2>Asynchronous Programming</h2>
-      <p>Imagine that you need groceries. Unlike our first example, in this one you stay home and shop online.</p>
-      <p>You shop at a grocer that offers fresh produce delivered to your door. You pick some, check out, and then pay.</p>
-      <p>Then, you locate a vendor that sources locally produced meats. You buy some bacon and steak at a good price and then pay at the checkout.</p>
-      <p>You decide to order a special treat from an online candy shop. You pay at the checkout.</p>
-      <p>Unlike the first example, you have to wait for all of your packages to arrive. You don't know when they will arrive, you just know it will be sometime in the future.</p>
-      <p>You don't know what order things will arrive in.</p>
-    </article>
-
-    <article class='slide slide-list'>
-      <h2>An Aynchronous Code Example</h2>
-      
-    </article>
-
-    <article class='slide slide-list'>
-      <pre class='prettyprint'>
-      </pre>
-    </article>
 
     <!-- CALLBACKS -->
 
@@ -151,11 +156,40 @@
       <p>You need to use callback function when you need to execute something just after the function you called.</p>
       <p>The callback is a function that is called when your asynchronous code is done running.</p>
       <p>"Hey Javascript, I don't know when this code will run, but when it does you need to make sure you do this step/run this function right after."</p>
-      <p>Callback functions are given as arguments - remember functions are objects that we can pass as 
+      <p>Callback functions are given as arguments - remember functions are objects that we can pass into other functions!</p>
+    </article>
+
+    <article><h2>Some Advice On Callbacks</h2>
+      <h3>"Callbacks are just like children: they make you happiest when you give them names and plenty of room" - @maxogden</h3>
     </article>
 
     <article>
-      <h2>
+      <h2>Don't Inline Functions</h2>
+      <p>Some people do, but it can get messy</p>
+      <p> [Example of inlining vs. not inlining]</p>
+    </article>
+
+    <article>
+      <h2>Name Your Callbacks</h2>
+      <p>It makes figuring out where your code went wrong easier.</p>
+    </article>
+
+    <article>
+      <h2>What Happens If You Don't Do This?</h2>
+      <p>[Example of callback hell]
+    </article>
+
+    <article>
+      <h2>Closures: The magic one-way mirror</h2>
+      <p>When you pass along a function, you not only get what is inside the function... but also the parent function!</p>
+      <p>This scope also gets passed along with a function when the function is passed around.</p>
+      <p>You already know this and you're already using closures, I just wanted you to know there is a name for this in case you see closures around the internet</p>
+    </article>
+
+    <article>
+      <h2>Closures and Function Scope: Like a One-Way Mirror/Glass</h2>
+      <p>The inner function can 'see' the contents of the outer function, but the outer function cannot see the contents of the inner function</p>
+      <small>Thanks to <a href='http://twitter.com/supersole'>@supersole</a> for this tidy analogy.</small>
     </article>
 
     <article>
@@ -165,6 +199,7 @@
       <p>We can get data (images, text, etc.) to use in our own app!</p>
     </article>
 
+    <!-- APIs and NETWORK REQUESTS -->
     <article>
       <h2>APIs: What Are They?</h2>
       <p>API stands for Application Programming Interface</p>
@@ -185,7 +220,7 @@
     </article>
 
     <article>
-      <p>You simply create an instance of the object, open a URL, and send the request.  The HTTP status of the result, as well as the result's contents, are available in the request object when the transaction is completed.</p>
+      <p>You use a function to create a request object, open a URL, and then use a method to send the request.  The HTTP status of the result, as well as the result's contents, are available in the request object when the transaction is completed.</p>
     </article>
 
     <article>
@@ -195,17 +230,16 @@
     </article>
 
     <article>
+      <p>[Example request that gets a cat, puts it in an img tag with src property]</p>
+    </article>
+
+    <article>
       <h2>URL Arguments</h2>
       <p>Did you know that a URL contains parameters/arguments for the program on it's host machine?</p>
     </article>
 
     <article>
-      <h2>A Simple Network Request</h2>
-
-    </article>
-
-    <article>
-      [Exercise, request cats and put them in a webpage]
+      <p>[Exercise to construct own URL query and make a network request to get cat pictures by some other criteria]</p>
     </article>
 
     <!-- HOW TO USE THIRD PARTY CODE -->
@@ -221,9 +255,7 @@
       <p>Read the documentation like you did for CatAPI</p>
       <p>If it doesn't have good documentation, don't use it</p>
     </article>
-    <article>
 
-    </article>
     <!-- DESIGNING YOUR OWN SOFTWARE/PROGRAMS -->
     <article class='slide slide-list'>
       <h2>Designing Programs/Software</h2>
@@ -257,6 +289,16 @@
       <p>Comment liberally! Future you will thank you.</p>
       <p>Functions ~50 lines or less (keeps them easier to debug!)</p>
     </article>
+
+    <article>
+      <h2>Namespaces/Namespacing</h2>
+      <p>Use objects to organize your code</p>
+      <p>Store functions on an object (methods) to group functions together</p>
+      <p>This helps similarly named functions from colliding because of scope</p>
+      <p>This is called namespacing, because you are taking some code, naming it, and giving it some space to call it's own</p>
+      <p>[Examples of methods on an object vs. not]
+    </article>
+
     <article class='slide slide-list'>
     </article>
 

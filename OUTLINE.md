@@ -93,22 +93,7 @@ Think async: don't block the event loop
 
 
 
-Closures and Callbacks
-===
 
-
-"Callbacks are just like children: they make you happiest when you give them names and plenty of room" - @maxogden, author of 'Javascript for Cats'
-
-Scope
-===
-
-In the first Javascript I course, we learned about the 'global scope' and then 'function scope'.
-
-
-closures = a room with one side transparent walls. You can see inside & outside but can't be seen from outside - @supersole
-
-
-[Exercises using callbacks with simple DOM APIs?]
 
 
 
