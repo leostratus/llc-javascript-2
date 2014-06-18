@@ -41,7 +41,7 @@
       <p>Functions and how the browser deals with them: in Angelina's opinion, the most important thing to learn early!</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Exercise #1: Review Skills from JS I (10 mins)</h2>
       <p>Take a look at index.html in the /review/ folder</p>
       <p>Don't be shy to ask your new friends or your mentor</p>
@@ -56,22 +56,33 @@
     </article>
 
     <!-- SCOPE AND FUNCTIONS -->
-    <article>
+    <article class='slide slide-list'>
       <h2>Revisiting Scope</h2>
       <p>Javascript has function level scope</p>
       <p>This means that function declarations define the boundaries of what variables and functions are available for other code to interact with</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <p>Run some examples to demonstrate things being in and out of scope</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Did You Know You Can Do This?</h2>
-      <p>[Example of function call happening before definition]</p>
+      <textarea class='coder-editor'>
+<script>
+
+helloWorld();
+
+function helloWorld(){
+  alert('Hey friends!');
+}
+
+</script>
+      </textarea>
+</article>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>
     </article>
 
@@ -106,26 +117,26 @@
       <p>A lot of Javascript developers don't know this!<p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>The Browser Event Loop</h2>
       <p> aka 'what the Javascript is doing behind the scenes'
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Questions to Ask</h2>
       <p>What happens if the browser has to deal with more than one event?</p>
       <p>How does it keep track of them?</p>
       <p>What if other code is running - other functions are running - and an event happens?</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Stacks and Queues</h2>
       <p>Stacks and queues are two data structures that you will hear about often when programming.</p>
       <p>A data structure is a particular way of storing and organizing data/information. Different kinds of data structures are suited to different kinds of applications, and some are highly specialized to specific tasks.</p>
       <p>You can think of a stack or a queue as an object that stores other objects, but with conditions on how the objects can be stored and accessed.</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Stacks</h2>
       <p>A stack is like a box with a bottom</p>
       <p>Whatever object is stored last in the stack is on top</p>
@@ -133,7 +144,7 @@
       <p>Stacks are said to be LIFO: Last In, First Out</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Queues</h2>
       <p>A queue is just like a line-up at the bank<p>
       <p>Objects can only enter the queue at the end of the line, behind all the other objects.</p>
@@ -151,7 +162,7 @@
 
     <!-- CALLBACKS -->
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Callbacks</h2>
       <p>You need to use callback function when you need to execute something just after the function you called.</p>
       <p>The callback is a function that is called when your asynchronous code is done running.</p>
@@ -159,40 +170,41 @@
       <p>Callback functions are given as arguments - remember functions are objects that we can pass into other functions!</p>
     </article>
 
-    <article><h2>Some Advice On Callbacks</h2>
+    <article class='slide slide-list'>
+      <h2>Some Advice On Callbacks</h2>
       <h3>"Callbacks are just like children: they make you happiest when you give them names and plenty of room" - @maxogden</h3>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Don't Inline Functions</h2>
       <p>Some people do, but it can get messy</p>
       <p> [Example of inlining vs. not inlining]</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Name Your Callbacks</h2>
       <p>It makes figuring out where your code went wrong easier.</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>What Happens If You Don't Do This?</h2>
       <p>[Example of callback hell]
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Closures: The magic one-way mirror</h2>
       <p>When you pass along a function, you not only get what is inside the function... but also the parent function!</p>
       <p>This scope also gets passed along with a function when the function is passed around.</p>
       <p>You already know this and you're already using closures, I just wanted you to know there is a name for this in case you see closures around the internet</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Closures and Function Scope: Like a One-Way Mirror/Glass</h2>
       <p>The inner function can 'see' the contents of the outer function, but the outer function cannot see the contents of the inner function</p>
       <small>Thanks to <a href='http://twitter.com/supersole'>@supersole</a> for this tidy analogy.</small>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Using Callbacks to Handle Network Requests</h2>
       <p>Let's learn how to talk to someone else's code remotely</p>
       <p>We can talk to someone else's program using an API</p>
@@ -200,45 +212,45 @@
     </article>
 
     <!-- APIs and NETWORK REQUESTS -->
-    <article>
+    <article class='slide slide-list'>
       <h2>APIs: What Are They?</h2>
       <p>API stands for Application Programming Interface</p>
       <p>A set of functions for remotely accessing data/content</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>How do we know if an application has an API?</h2>
       <p>There will be a link on their homepage (e.g. Facebook, Twitter)</p>
       <p>You want to read the documentation first!</p>
       <p>A cursory web search will help you find useful APIs</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>What is a Network Request?</h2>
       <p>A network request is a function that uses the browser's ability to fetch from a URL/web location to get data without having to load it in HTML</p>
       <p>We use XMLHttpRequest(); - a function built in to your browser</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <p>You use a function to create a request object, open a URL, and then use a method to send the request.  The HTTP status of the result, as well as the result's contents, are available in the request object when the transaction is completed.</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Let's request... some cats!</h2>
       <p>We are going to use the API for http://thecatapi.com/</p>
       <p>Head to this link and find the documentation.</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <p>[Example request that gets a cat, puts it in an img tag with src property]</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>URL Arguments</h2>
       <p>Did you know that a URL contains parameters/arguments for the program on it's host machine?</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <p>[Exercise to construct own URL query and make a network request to get cat pictures by some other criteria]</p>
     </article>
 
@@ -250,7 +262,7 @@
       <p>How do you know if it's safe?</p>
       <p>Where do you get it?</p>
     </article>
-    <article>
+    <article class='slide slide-list'>
       <h2>How do you know how to use it?</h2>
       <p>Read the documentation like you did for CatAPI</p>
       <p>If it doesn't have good documentation, don't use it</p>
@@ -290,7 +302,7 @@
       <p>Functions ~50 lines or less (keeps them easier to debug!)</p>
     </article>
 
-    <article>
+    <article class='slide slide-list'>
       <h2>Namespaces/Namespacing</h2>
       <p>Use objects to organize your code</p>
       <p>Store functions on an object (methods) to group functions together</p>
@@ -300,10 +312,31 @@
     </article>
 
     <article class='slide slide-list'>
+      <pre class="prettyprint">
+var products = {}; 
+    
+products.create = function(productName, price){
+    // adds a new product to the website, let's pretend all products have unique names
+};
+
+products.destroy = function(productName){
+    // removes a products from the website given the product name
+};
+
+var blog = {};
+
+blog.create = function(blogText) {
+    // adds a new blog post, gives it some kind of identifier like a unique ID/number or date
+};
+
+blog.destroy = function(blogID) {
+    //destroys a blog post when given a valid ID for the blog post
+};
+      </pre>
     </article>
 
     <!-- RESOURCES -->
-    <article>
+    <article class='slide slide-list'>
       <h2>Resources</h2>
       <p><a href='http://callbackhell.com/'>Callback Hell: Patterns for managing your async code</a></p>
       <p><a href='http://vimeo.com/96425312'>Help, I'm stuck in an Event Loop! Review how the browser event loop works</a></p>

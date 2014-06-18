@@ -10,23 +10,6 @@ jQuery and Frameworks: when and how to use
 SystemXHR (closures, callbacks)
 Parsing JSON
 
-Review: 
-
-
-There is another HTML file that you should have open in another tab called 'helpers.html' which contains some of the summary slides from Javascript I about variables, objects, and functions. A lot of the time when programmers are working they have open tabs in their browser that contain information about the language their working in. They don't have everything memorized, so don't think because you need to check the answer to something that you're not a 'real' programmer.
-
-The first thing we're going to is review what we learned about functions last time, and then do a few exercises to warm up. Then, we're going to learn that there is a lot more to learn about functions.
-
-
-Functions are the smallest, most modular unit of execution.
-
-Most of the code we write will run as a result of functions. So, you can see they are very important if not the most important thing to master early in Javascript.
-
-In Javascipt I we learned how to set up an event so that when we clicked on something, a function would be execute and it's code would be run. 
-
-What happens if the browser has to deal with more than one event? How does it keep track of them? What if other code is running - other functions are running - and an event happens?
-
-We're going to go through how your browser works with some diagrams so that you get an idea of what is happening. This way, when your code doesn't work, you have a high-level model for understanding what your browser is doing and where things went wrong.
 
 Javascript is single-threaded: all this means is that when Javascript is working in the browser, only one thing can be done at a time. Only one function can be running at a time, even though we can write code to make it _seem_ like things are happening in parallel
 
@@ -142,45 +125,6 @@ In the case of a function assigned to a variable, the 'doingStuff' function name
 
 Why not? It's inside the variable. The only way to call doStuff() is to call doSomething()!
 
-
-Using variables to organize your code
-===
-
-As your Javascript programs get more complicated, this special way of defining functions inside of an object lets you organize your functions. 
-
-Why is this important? Well, let's say you have some products and subscriptions on your website. Maybe you're running a web store and a blog for that store on the same website.
-
-// Create an object to store our functions in, but we create named variables that represent categories of actions related to  
-
-var products = {}; 
-    
-products.create = function(productName, price){
-    // adds a new product to the website, let's pretend all products have unique names
-};
-
-products.destroy = function(productName){
-    // removes a products from the website given the product name
-};
-
-var blog = {};
-
-blog.create = function(blogText) {
-    // adds a new blog post, gives it some kind of identifier like a unique ID/number or date
-};
-
-blog.destroy = function(blogID) {
-    //destroys a blog post when given a valid ID for the blog post
-};
-
-We do this because we can't use the nice name of 'create' or 'destroy' more than once in a given scope. You could, in theory, do this:
-
-function createProduct(productName, price)(){};
-function destroyProduct(productName)(){};
-
-function createBlogPost(blogText){};
-function destroyBlogPost(blogID){};
-
-I argue that putting your functions on objects and grouping them by what things they do and what they operate on is nicer and keeps them compartmentalized.
 
 
 
