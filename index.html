@@ -36,21 +36,71 @@
     </article>
 
     <article class='slide slide-list'>
-      <h2>Synonyms</h2>
-      <p>Call a function: execute, run, invoke</p>
-      <p></p>
-
-    </article>
-
-    <!--  Functions as smallest unit of execution -->
-    <article class='slide slide-list'>
       <h2>Functions</h2>
       <p>Most of our code will run as a result of functions</p>
+      <p>Functions and how the browser deals with them: in Angelina's opinion, the most important thing to learn early!</p>
+    </article>
+
+    <article>
+      <h2>Exercise #1: Review Skills from JS I (10 mins)</h2>
+      <p>Take a look at index.html in the /review/ folder</p>
+      <p>Don't be shy to ask your new friends or your mentor</p>
+      <p>Have helpers.html open in a tab for reference</p>
     </article>
 
     <article class='slide slide-list'>
-
+      <h2>Synonyms</h2>
+      <p>Programming, like any field, has it's own jargon. There are some words that you will encounter that mean the same thing</p>
+      <p>Call a function: execute, run, invoke</p>
+      <p>Function parameter: argument</p>
     </article>
+
+
+
+
+    <!-- THE BROWSER EVENT LOOP -->
+
+    <article class='slide slide-list'>
+      <h2>So.. How Does This Javascript Stuff Work Anyways?</h2>
+      <p>Seriously, it's all invisible to us.</p>
+      <p>... what is going on inside the browser when functions are called?</p>
+      <p>A lot of Javascript developers don't know this!<p>
+    </article>
+
+    <article>
+      <h2>The Browser Event Loop</h2>
+      <p> aka 'what the Javascript is doing behind the scenes'
+    </article>
+
+    <article>
+      <h2>Questions to Ask</h2>
+      <p>What happens if the browser has to deal with more than one event?</p>
+      <p>How does it keep track of them?</p>
+      <p>What if other code is running - other functions are running - and an event happens?</p>
+    </article>
+
+    <article>
+      <h2>Stacks and Queues</h2>
+      <p>Stacks and queues are two data structures that you will hear about often when programming.</p>
+      <p>A data structure is a particular way of storing and organizing data/information. Different kinds of data structures are suited to different kinds of applications, and some are highly specialized to specific tasks.</p>
+      <p>You can think of a stack or a queue as an object that stores other objects, but with conditions on how the objects can be stored and accessed.</p>
+    </article>
+
+    <article>
+      <h2>Stacks</h2>
+      <p>A stack is like a box with a bottom</p>
+      <p>Whatever object is stored last in the stack is on top</p>
+      <p>We can't get at anything else in the stack other than the object on top</p>
+      <p>Stacks are said to be LIFO: Last In, First Out</p>
+    </article>
+
+    <article>
+      <h2>Queues</h2>
+      <p>A queue is just like a line-up at the bank<p>
+      <p>Objects can only enter the queue at the end of the line, behind all the other objects.</p>
+      <p>Queues are said to be FIFO: First In, First Out</p>
+    </article>
+
     <article class='slide slide-list'>
     </article>
 
@@ -93,19 +143,88 @@
       <pre class='prettyprint'>
       </pre>
     </article>
+
+    <!-- CALLBACKS -->
+
     <article>
       <h2>Callbacks</h2>
       <p>You need to use callback function when you need to execute something just after the function you called.</p>
       <p>The callback is a function that is called when your asynchronous code is done running.</p>
       <p>"Hey Javascript, I don't know when this code will run, but when it does you need to make sure you do this step/run this function right after."</p>
+      <p>Callback functions are given as arguments - remember functions are objects that we can pass as 
     </article>
+
+    <article>
+      <h2>
+    </article>
+
+    <article>
+      <h2>Using Callbacks to Handle Network Requests</h2>
+      <p>Let's learn how to talk to someone else's code remotely</p>
+      <p>We can talk to someone else's program using an API</p>
+      <p>We can get data (images, text, etc.) to use in our own app!</p>
+    </article>
+
+    <article>
+      <h2>APIs: What Are They?</h2>
+      <p>API stands for Application Programming Interface</p>
+      <p>A set of functions for remotely accessing data/content</p>
+    </article>
+
+    <article>
+      <h2>How do we know if an application has an API?</h2>
+      <p>There will be a link on their homepage (e.g. Facebook, Twitter)</p>
+      <p>You want to read the documentation first!</p>
+      <p>A cursory web search will help you find useful APIs</p>
+    </article>
+
+    <article>
+      <h2>What is a Network Request?</h2>
+      <p>A network request is a function that uses the browser's ability to fetch from a URL/web location to get data without having to load it in HTML</p>
+      <p>We use XMLHttpRequest(); - a function built in to your browser</p>
+    </article>
+
+    <article>
+      <p>You simply create an instance of the object, open a URL, and send the request.  The HTTP status of the result, as well as the result's contents, are available in the request object when the transaction is completed.</p>
+    </article>
+
+    <article>
+      <h2>Let's request... some cats!</h2>
+      <p>We are going to use the API for http://thecatapi.com/</p>
+      <p>Head to this link and find the documentation.</p>
+    </article>
+
+    <article>
+      <h2>URL Arguments</h2>
+      <p>Did you know that a URL contains parameters/arguments for the program on it's host machine?</p>
+    </article>
+
+    <article>
+      <h2>A Simple Network Request</h2>
+
+    </article>
+
+    <article>
+      [Exercise, request cats and put them in a webpage]
+    </article>
+
+    <!-- HOW TO USE THIRD PARTY CODE -->
+
     <article class='slide slide-list'>
       <h2>Using Someone Else's Code</h2>
       <p>How do you know how to use it?</p>
       <p>How do you know if it's safe?</p>
       <p>Where do you get it?</p>
     </article>
+    <article>
+      <h2>How do you know how to use it?</h2>
+      <p>Read the documentation like you did for CatAPI</p>
+      <p>If it doesn't have good documentation, don't use it</p>
+    </article>
+    <article>
 
+    </article>
+    <!-- DESIGNING YOUR OWN SOFTWARE/PROGRAMS -->
     <article class='slide slide-list'>
       <h2>Designing Programs/Software</h2>
       <p>Start small</p>
@@ -139,6 +258,14 @@
       <p>Functions ~50 lines or less (keeps them easier to debug!)</p>
     </article>
     <article class='slide slide-list'>
+    </article>
+
+    <!-- RESOURCES -->
+    <article>
+      <h2>Resources</h2>
+      <p><a href='http://callbackhell.com/'>Callback Hell: Patterns for managing your async code</a></p>
+      <p><a href='http://vimeo.com/96425312'>Help, I'm stuck in an Event Loop! Review how the browser event loop works</a></p>
+      <p><a href="http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/">Function Declarations vs Function Expressions</a></p>
     </article>
 
 

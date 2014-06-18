@@ -18,20 +18,6 @@ There is another HTML file that you should have open in another tab called 'help
 The first thing we're going to is review what we learned about functions last time, and then do a few exercises to warm up. Then, we're going to learn that there is a lot more to learn about functions.
 
 
-Functions
-===
-
-- can be created via literals
-- can be assigned to variables, array entries, and properties of other objects
-- can be passed as arguments to functions
-- can be returned as values from functions
-- can possess properties that can be dynamically created and assigned
-- functions are objects with a special property: they can be 'invoked' or 'executed'
-
-
-[Exercises Here]
-
-
 Functions are the smallest, most modular unit of execution.
 
 Most of the code we write will run as a result of functions. So, you can see they are very important if not the most important thing to master early in Javascript.
@@ -53,18 +39,7 @@ Synchronous vs. Asynchronous
 
 Use examples from [Raquel's post!](http://rckbt.me/2014/05/understanding-async/)
 
-Synchronous Programming
-===
 
-You go to the shopping mall. Your first stop is to The Shirt Store. Having found the shirt you like, you go to the cashier, pay for your shirt, and walk out with your shirt. Next, you go to The Pants Store. Again, you pick out a pair of jeans, head to the cashier, pay, and walk out. Finally, you enter The Shoe Store. You grab your pair of shoes, pay for them at the cashier, and walk out. Now that you've got your shirt, pants, and shoes, you can go home and party on.
-
-Asynchronous Programming
-===
-
-You are at home and are shopping online. You go to TheShirtStore.com, pick your shirt, and pay for it. Then you head to ThePantsStore.com, select your pants, and pay. Finally, you direct your browser to TheShoeStore.com and buy a pair of shoes. Over the course of the next week, your purchases show up via delivery. Your shoes come in first, then your shirt, and then your pants. Now that you've got your shirt, pants, and shoes, you can party on! (You don't need to go home, because you're probably home already.)
-
-
-Now, let's look at some examples and diagrams so that we can understand how this all works. Then, we'll talk about how to manage functions when you're not sure when they'll execute.
 
 
 The Browser Event Loop
@@ -116,12 +91,6 @@ Think async: don't block the event loop
 
 [Have a mini-quiz on how the browser works, multiple choice, here.]
 
-Going Back to the Clothes Example
-===
-
-Let's go back to the clothes example where we had synchronous and asynchronous close purchases:
-
-[examples]
 
 
 Closures and Callbacks
@@ -316,12 +285,6 @@ function foo(){
 alert(foo()); //3
 
 
-Resources
-===
-
-Need to review the basics or know somebody who couldn't make it to Javascript I with you?
-
-http://jsforcats.com/
 
 
 
