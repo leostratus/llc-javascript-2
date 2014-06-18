@@ -23,6 +23,22 @@
 </head>
 
 <body class="deck-container">
+  <script type='text/coderdeck' id='coderdeck-default'>
+      <html>
+        <head>
+          <script src='src/jquery.min.js'>SCRIPTEND</head>
+        <body>CODE</body>
+      </html>
+      </script>
+    
+      <script type='text/coderdeck' id='coderdeck-style-example'>
+      <html>
+        <title>test</title>
+        <style>CODE</style>
+        <body>
+        </body>
+      </html>
+    </script>
   <div id="presentation">
     <!-- SLIDE: FUNCTIONS SUMMARY -->
     <article class='slide slide-list'>
@@ -63,9 +79,32 @@
     </article>
 
     <article class='slide slide-list'>
-      <p>Run some examples to demonstrate things being in and out of scope</p>
+      <h2>Quiz: What will happen?</h2>
+      <textarea class='coder-editor'>
+<script>
+function greetings(){
+
+  var doingWellThanks = "I'm feeling alright today.";
+
+  howAreYou();
+  
+  alert(notSoGreat); // This should give an error
+
+    function howAreYou(){
+      var notSoGreat = "I'm not feeling so great today";
+
+      alert(doingWellThanks); //This will work
+    }
+
+}
+
+greetings();
+
+</script>
+      </textarea>
     </article>
 
+    <!-- Hoisting -->
     <article class='slide slide-list'>
       <h2>Did You Know You Can Do This?</h2>
       <textarea class='coder-editor'>
@@ -79,16 +118,101 @@ function helloWorld(){
 
 </script>
       </textarea>
-</article>
     </article>
 
     <article class='slide slide-list'>
-      <h2>
+      <h2>Hoisting</h2>
+      <p>But.. shouldn't you have to declare the function before using it?</p>
+      <p>When the Javascript is run, all the declarations for functions and variables silently move to the top of the scope they are in</p>
+      <p>Your declarations get moved to before they are needed - before execution</p>
+    </article>
+
+    <article class='slide slide-list'>
+      <h2>Hoisting cont..</h2>
+      <p>Declarations are hoisted, but not assignments<p>
+      <textarea class='coder-editor'>
+<script>
+
+fruits();
+
+var apple;
+
+function fruits(){
+
+  alert(apple); // Nothing!
+}
+
+apple = 'Rosy red apple'; 
+
+</script>
+      </textarea>
+    </article>
+
+    <article class='slide slide-list'>
+      <h2>Hoisting cont..</h2>
+      <p>The same is true when you store a function in a variable<p>
+      <textarea class='coder-editor'>
+<script>
+
+fruits();
+
+var apple;
+
+function fruits(){
+  apple(); 
+}
+
+apple = function(){
+  alert('Rosy red apple');
+}; 
+
+</script>
+      </textarea>
+      <p>Open the developer tools in Firefox or Chrome and look at the Console panel - you'll see an error!</p>
+    </article>
+
+    <article class='slide slide-list'>
+      <h2>Quiz: What do you think will happen?</h2>
+      <textarea class='coder-editor'>
+<script>
+function foo(){
+    function bar() {
+        return 3;
+    }
+    return bar()
+    function bar() {
+        return 8;
+    }
+}
+alert(foo());
+</script>
+      </textarea>
+    </article>
+
+    <article class='slide slide-list'>
+
+    <article class='slide slide-list'>
+      <h2>Quiz: What do you think will happen?</h2>
+      <textarea class='coder-editor'>
+<script>
+function foo(){
+    var bar = function() {
+        return 3;
+    };
+    return bar();
+    var bar = function() {
+        return 8;
+    };
+}
+alert(foo());
+</script>
+      </textarea>
     </article>
 
     <article class='slide slide-list'>
       <h2>JavaScript is asynchronous</h2>
     </article>
+
     <article class='slide slide-list'>
       <h2>Synchronous Programming</h2>
       <p>Imagine that you need groceries. You go out of your home to buy some.</p>
@@ -106,7 +230,6 @@ function helloWorld(){
       <p>Unlike the first example, you have to wait for all of your packages to arrive. You don't know when they will arrive, you just know it will be sometime in the future.</p>
       <p>You don't know what order things will arrive in.</p>
     </article>
-
 
     <!-- THE BROWSER EVENT LOOP -->
 

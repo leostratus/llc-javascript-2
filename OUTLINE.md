@@ -152,15 +152,6 @@ We've been talking about naming a bit, so let's look at this example here. There
 
 If you said 3, well, your intuition was good. Except, it turns out that Javascript doesn't do that. Instead we have 8. Why did this happen?
 
-There is some Javascript magic here called 'hoisting'.
-
-You'll notice in Javascript that you can do this:
-
-baz();
-
-function baz(){
-    alert("Whoa, called the function before declaring it..? how does this magic work?");
-}
 
 Well, this works because the Javascript engine does operations to reorganize your Javascript when it encounters it.
 
