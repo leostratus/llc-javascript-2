@@ -9,6 +9,8 @@ Missing:
 
 - Javascript event loop quiz
 
+- Cats Everywhere solutions
+
 Cleanup:
 
 - Add images for flavor
