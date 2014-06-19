@@ -11,6 +11,8 @@ Missing:
 
 - Cats Everywhere solutions
 
+- Could add a few slides on unobtrusive Javascript (probably a good idea)
+
 Cleanup:
 
 - Add images for flavor

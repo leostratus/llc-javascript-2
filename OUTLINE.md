@@ -1,4 +1,4 @@
-LLC Javascript 2
+LLC Javascript 2 Notes
 ===
 
 Functions
@@ -70,7 +70,7 @@ Think async: don't block the event loop
 [Have a mini-quiz on how the browser works, multiple choice, here.]
 
 
-
+ 
 
 
 
